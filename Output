@@ -1,0 +1,126 @@
+package com.rachit;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
+
+interface Fruit{}
+
+class Bananas implements Fruit{
+	
+	static double cost;
+	
+	public static double getCost() {
+		// TODO Auto-generated method stub
+		return cost;
+	}
+	
+}
+class Oranges implements Fruit{
+	
+static double cost;
+	
+	public static double getCost() {
+		// TODO Auto-generated method stub
+		return cost;
+	}
+	
+}
+class Apples implements Fruit{
+	
+static double cost;
+	
+	public static double getCost() {
+		// TODO Auto-generated method stub
+		return cost;
+	}
+	
+}
+class Lemons implements Fruit{
+	
+static double cost;
+	
+	public static double getCost() {
+		// TODO Auto-generated method stub
+		return cost;
+	}
+}
+class Peaches implements Fruit{
+	
+static double cost;
+	
+	public static double getCost() {
+		// TODO Auto-generated method stub
+		return cost;
+	}
+	
+}
+
+	public class Output {
+		
+		static{ //Giving initial prices.
+			Bananas.cost = 10;
+			Oranges.cost = 5;
+			Apples.cost = 4;
+			Lemons.cost = 2;
+			Peaches.cost = 3;
+			
+			
+		}
+		
+	public static void main(String args[]) 
+	{
+
+        List<Fruit> basket = new ArrayList<Fruit>();
+        Bananas bn = new Bananas();
+		Oranges or = new Oranges();
+		Apples apl = new Apples();
+		Lemons lem = new Lemons();
+		Peaches pch = new Peaches();
+		basket.add(bn);
+		basket.add(bn);
+		basket.add(or);
+		basket.add(apl);
+		System.out.println(basketTotalCost(basket));
+	}
+	
+	
+    public static double basketTotalCost(List<Fruit> lst){
+    	
+    	int bananas = 0;
+    	int oranges = 0;
+    	int apples = 0;
+    	int lemons = 0;
+    	int peaches = 0;
+    	
+    	for(Fruit fr : lst){
+    		 if(fr instanceof Bananas){
+    			 bananas = bananas + 1;
+    			 
+    		 }
+    		 if(fr instanceof Oranges){
+    			 oranges = oranges + 1;
+    			 
+    		 }
+    		 if(fr instanceof Apples){
+    			 apples = apples + 1;
+    			 
+    		 }
+    		 if(fr instanceof Lemons){
+    			 lemons = lemons + 1;
+    			 
+    		 }
+    		 if(fr instanceof Peaches){
+    			 peaches = peaches + 1;
+    			 
+    		 }
+    		
+    	}
+    	
+    	double totalCost  = (bananas*Bananas.getCost()) + (lemons*Lemons.getCost())+(peaches*Peaches.getCost()) +
+    	(apples*Apples.getCost()) + (oranges*Oranges.getCost());
+        
+    	return totalCost;
+    }
+}
