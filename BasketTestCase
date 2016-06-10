@@ -1,0 +1,47 @@
+package com.rachit;
+
+
+import static org.junit.Assert.assertEquals;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import org.junit.Before;
+import org.junit.Test;
+
+public class BasketTestCase {
+
+	@Before
+	public void setUp() throws Exception {
+	
+		
+			Bananas.cost = 10;
+			Oranges.cost = 5;
+			Apples.cost = 4;
+			Lemons.cost = 2;
+			Peaches.cost = 3;
+		
+			
+		
+	
+	}
+	
+	 @Test
+	   public void testAdd() {
+	      
+	     List<Fruit> basket = new ArrayList<Fruit>();
+	        Bananas bn = new Bananas();
+			Oranges or = new Oranges();
+			Apples apl = new Apples();
+			Lemons lem = new Lemons();
+			Peaches pch = new Peaches();
+			basket.add(bn);
+			basket.add(bn);
+			basket.add(or);
+			basket.add(apl);
+			//assertEquals("abc", "abc");
+		assertEquals(29.0,Output.basketTotalCost(basket), 0.00);
+	      
+	   }
+
+}
